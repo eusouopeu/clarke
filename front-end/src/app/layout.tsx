@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Roboto, Comfortaa } from "next/font/google";
 import "@/styles/globals.css";
+
+import clsx from "clsx";
+
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 
-const roboto = Roboto({ display: "swap", subsets: ["latin-ext"], weight: ["300", "400", "500", "700", "900"] });
+const comfortaa = Comfortaa({ display: "swap", subsets: ["latin-ext"], weight: ["300", "400", "500", '600', "700"], variable: "--${comfortaa}" });
+const roboto = Roboto({ display: "swap", subsets: ["latin-ext"], weight: ["300", "400", "500", "700", "900"], variable: "--${roboto}" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,14 +22,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
-
-      <body className={roboto.className}>
+    <html lang="pt-br" className={clsx( roboto.className, comfortaa.variable )}>
+      <body>
         <Header />
 
         {children}
+
+        <Footer />
       </body>
-      
     </html>
   );
 }
