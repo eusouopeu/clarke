@@ -4,7 +4,7 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
 }
 
@@ -23,7 +23,7 @@ body {
 
 @layer base {
   h1, h2, h3 ,h4, h5, h6 {
-    @apply font-bold text-center leading-tight;
+    @apply font-bold leading-tight;
   }
   h2 {
     @apply text-[2rem];
@@ -32,26 +32,28 @@ body {
     @apply text-[1.5rem];
   }
   p, li, a {
-    @apply text-[1rem] text-justify;
+    @apply text-[1rem] text-justify max-w-[90%] whitespace-pre-wrap;
+  }
+  a:hover {
+    @apply font-bold text-emerald-500 duration-500;
   }
   label {
     @apply font-display font-bold;
   }
-  section {
+  section, .s-gap {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-
-    &.s-padding {
-      padding: 60px 15vw;
-    }
-    &.s-shadow {
-      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    }
+    gap: 20px;
+  }
+  .s-padding {
+    padding: 60px 15vw;
+  }
+  .s-shadow {
+    box-shadow: 0 -10px 10px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
   }
   button {
-    @apply flex py-[8px] px-[16px] bg-gradient-to-b from-emerald-300 to-green-500 border-[2px] border-slate-900/50 text-white font-bold rounded-full;
-  
+    @apply flex max-h-[40px] py-[6px] px-[16px] bg-gradient-to-b from-emerald-500 hover:from-emerald-600 to-green-600 hover:to-green-700 text-white font-bold rounded-full shadow-lg;
   }
 }
 

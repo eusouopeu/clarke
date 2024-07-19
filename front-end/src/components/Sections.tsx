@@ -1,15 +1,19 @@
-import clsx from 'clsx'
 import React from 'react'
+import clsx from 'clsx'
+import Image from 'next/image'
 
 
-interface HeroProps {
+interface CardsProps {
   className?: string
-  type?: string
+  src?: any
+  title?: string
+  title2?: string
+  content?: string
   children?: React.ReactNode
 }
 export function Hero({
   className,
-}: HeroProps) {
+}: CardsProps) {
 
   return (
     <section className={clsx( "absolute s-gap justify-between s-padding z-10 flex flex-col lg:flex-row pt-[60px] text-white", className )}>
@@ -41,7 +45,44 @@ export function Hero({
         </label>
         <input id='nome' type="text" placeholder="Aplicação Web e App Mobile" className='py-[8px] px-[16px] bg-slate-100/70 placeholder:text-zinc-900 rounded-xl shadow-lg' readOnly/>
 
+        <button className='mt-[8px] self-center px-[64px]'>Enviar</button>
+
       </form>
     </section>
+  )
+}
+
+
+export function StepsSection({
+  children,
+  className
+}: CardsProps) {
+  return (
+    <section className={clsx( "lg:flex-row flex-wrap s-shadow items-center w-full bg-gradient-to-r from-zinc-50 to-zinc-200 light:bg-gradient-to-r light:from-zinc-800 light:to-zinc-900 gap-0", className )}>
+        {children}
+      </section>
+  )
+}
+
+
+export function HalfImageSection({
+  className,
+  src,
+  title,
+  children
+}: CardsProps) {
+  return (
+    <section className={clsx( "flex flex-col lg:flex-row lg:justify-between w-full s-shadow bg-gradient-to-r from-emerald-400 to-green-500", className )}>
+        <div className="w-full lg:max-w-[50%]">
+          <Image src={src} alt="Imagem de uma lâmpada" width={850} height={450} />
+        </div>
+
+        <div className="s-gap justify-center w-full lg:max-w-[50%] p-[64px]">
+          <h2 className="text-left text-white">{title}</h2>
+
+          {children}
+
+        </div>
+      </section>
   )
 }

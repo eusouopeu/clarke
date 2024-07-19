@@ -1,35 +1,21 @@
 'use client'
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
-import AOS from 'aos';
-import 'swiper/css';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-
+//-- COMPONENTs
+import Carousel from "@/components/Carousel";
+import { Hero, HalfImageSection, StepsSection } from "@/components/Sections";
 import Steps from "@/components/Steps";
-import { Hero } from "@/components/Sections";
-import Cards from "@/components/Cards";
+//-- ASSETs
 import img1 from "@/assets/img1.jpg";
 import img2 from "@/assets/img2.jpg";
 import img3 from "@/assets/img3.jpg";
+import desktop from '@/assets/Desktop.png'
+import app from '@/assets/App.png'
 
-AOS.init();
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center pt-[45px] justify-between" data-aos='ease-in-out'>
-      <Swiper
-        spaceBetween={50}
-        slidesPerView={1}
-        navigation
-        autoplay={{ delay: 5000 }}
-        scrollbar={{ draggable: true }}
-        className="w-full h-[400px] brightness-50 s-shadow"
-      >
-        <Image src={img1} alt="Imagem 1" layout="fill" objectFit="cover" />
-        <Image src={img2} alt="Imagem 2" layout="fill" objectFit="cover" />
-        <Image src={img3} alt="Imagem 3" layout="fill" objectFit="cover" />
-      </Swiper>
+      <Carousel src={img1} src1={img2} src2={img3} className="h-[450px] s-shadow" />
 
       <Hero/>
 
@@ -39,18 +25,89 @@ export default function Home() {
       </section>
 
       
-      <section data-aos='' className="s-gap s-shadow items-center justify-center w-full py-[24px] px-[24px] bg-gradient-to-r from-zinc-50 to-zinc-200 light:bg-gradient-to-r light:from-zinc-800 light:to-zinc-900">
-        <Steps/>
-        <Steps number="2"/>
-        <Steps number="3"/>
-        <Steps number="4"/>
+      <StepsSection className="lg:flex-row flex-wrap s-shadow items-center w-full bg-gradient-to-r from-zinc-50 to-zinc-200 light:bg-gradient-to-r light:from-zinc-800 light:to-zinc-900 gap-0">
+        <Steps title="Ciclo de Desenvolvimento"/>
+        <Steps number="2" title="Versionamento"/>
+        <Steps number="3" title="Arquitetura"/>
+        <Steps number="4" title="Banco de Dados"/>
+      </StepsSection>
+
+      <section className="s-gap s-padding">
+        <h2 className="text-start">Integração & Testes</h2>
+
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam cum error, doloremque illum dolorum neque ex hic mollitia illo. Veritatis similique, possimus vel quo voluptas repellat delectus expedita quia ullam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam cum error, doloremque illum dolorum neque ex hic mollitia illo. Veritatis similique, possimus vel quo voluptas repellat delectus expedita quia ullam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam cum error, doloremque illum dolorum neque ex hic mollitia illo. Veritatis similique, possimus vel quo voluptas repellat delectus expedita quia ullam.</p>
       </section>
 
-      <section className="s-padding s-gap s-shadow bg-gradient-to-r from-emerald-300 to-green-400">
-        <h2>Economize com sustentabilidade</h2>
+      <HalfImageSection
+        src={desktop}
+        title="Website"
+      >
+        <ul className="flex flex-col gap-[8px] pl-[24px] list-disc *:text-[1.125rem]">
+          <li>
+            <span className="text-white font-bold">Informações Públicas: </span>
+            Endereço, contato, termos de uso, etc.
+          </li>
+          <li>
+            <span className="text-white font-bold">Linguagens: </span>
+            HTML, CSS e JavaScript (back-end facultativo)
+          </li>
+          <li>
+            <span className="text-white font-bold">Hospedagem: </span>
+            ...
+          </li>
+        </ul>
 
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla quo iusto eligendi tenetur quae inventore saepe similique? Voluptates, dolores modi dolorum vel fugiat provident dolor ut blanditiis labore quibusdam id! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, laudantium. Et voluptatum voluptatem maxime nostrum consequuntur praesentium vitae facere obcaecati odio reprehenderit, necessitatibus repellat eum vero repellendus dolorem numquam distinctio.</p>
+        <h2 className="text-left text-white"> Blog e Aplicação Web </h2>
+          <ul className="flex flex-col gap-[8px] pl-[24px] list-disc *:text-[1.125rem]">
+            <li>
+              <span className="text-white font-bold">Conteúdo dinâmico: </span>
+              Cadastro, autenticação (clientes e/ou funcionários), acesso à informações privadas, etc.
+            </li>
+            <li>
+              <span className="text-white font-bold">Linguagens: </span>
+              React/Vue (front-end) | Node.js/Django (back-end)
+            </li>
+            <li>
+              <span className="text-white font-bold">Hospedagem: </span>
+              ...
+            </li>
+          </ul>
+
+
+      </HalfImageSection>
+
+      <section className="s-gap s-padding">
+        <h2 className="text-start">Políticas de Dados, Backup & Técnicas de Segurança</h2>
+
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, exercitationem! Blanditiis facere maxime a laudantium incidunt doloremque magni maiores dolorum, rerum numquam placeat, eos illum quibusdam, eius error dicta tempora?</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, exercitationem! Blanditiis facere maxime a laudantium incidunt doloremque magni maiores dolorum, rerum numquam placeat, eos illum quibusdam, eius error dicta tempora?</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, exercitationem! Blanditiis facere maxime a laudantium incidunt doloremque magni maiores dolorum, rerum numquam placeat, eos illum quibusdam, eius error dicta tempora?</p>
+
       </section>
+
+      <HalfImageSection
+        src={app}
+        title="Aplicativo Mobile"
+        className="lg:flex-row-reverse"
+      >
+        <ul className="flex flex-col gap-[8px] pl-[24px] list-disc *:text-[1.125rem]">
+          <li>
+            <span className="text-white font-bold">Multiplataforma: </span>
+              disponível tanto na Apple Store (dispositivos iOS) quanto na Play Store (dispositivos Android)
+          </li>
+          <li>
+            <span className="text-white font-bold">Linguagens: </span>
+              Swift (iOS), Java (Android), React Native / Flutter (multiplataformas)
+          </li>
+          <li>
+            <span className="text-white font-bold">Hospedagem: </span>
+            ...
+          </li>
+        </ul>
+      </HalfImageSection>
+      
 
     </main>
   );

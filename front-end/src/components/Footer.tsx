@@ -1,9 +1,14 @@
-import Link from 'next/link'
 import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import destaques from '../assets/Destaques.png'
+import empresa from '../assets/Empresa.png'
+import clarkeapoia from '../assets/ClarkeApoia.png'
+
 
 export default function Footer() {
   return (
-    <footer className='flex flex-col justify-center p-[64px] gap-[64px] lg:flex bg-black text-white'>
+    <footer className='flex flex-col lg:flex-row justify-center p-[64px] gap-[64px] lg:flex bg-black text-white'>
 
       <ul className='flex flex-col gap-[24px] text-white *:text-[12px]'>
         <li>
@@ -33,29 +38,34 @@ export default function Footer() {
       </ul>
 
       <div>
-        <h6 className='text-start'>Destaques:</h6>
+        <h6>Destaques:</h6>
+        <Image src={destaques} alt='Destaques' />
       </div>
 
       <div>
-        <h6 className='text-start'>A Clarke apoia:</h6>
+        <h6>A Clarke apoia:</h6>
+        <Image src={clarkeapoia} alt='Clarke Apoia' />
       </div>
 
-      <ul className='flex flex-col text-white'>
-        <li>
-          <Link href={''} target='_blank'> Política de Privacidade </Link>
-        </li>
-        <li>
-          <Link href={''} target='_blank'> Trabalhe Conosco </Link>
-        </li>
-        <li>
-          <Link href={''} target='_blank'> Desperdiçômetro </Link>
-        </li>
-        <li>
-          <Link href={''} target='_blank'> Blog </Link>
-        </li>
-      </ul>
 
-      
+      <div>
+        <ul className='flex flex-col text-white w-fit'>
+          <li>
+            <Link href={''} target='_blank' className=''> Política de Privacidade </Link>
+          </li>
+          <li>
+            <Link href={''} target='_blank'> Trabalhe Conosco </Link>
+          </li>
+          <li>
+            <Link href={''} target='_blank'> Desperdiçômetro </Link>
+          </li>
+          <li>
+            <Link href={''} target='_blank'> Blog </Link>
+          </li>
+        </ul>
+
+        <Image src={empresa} alt='Empresa' className='max-w-[160px] max-h-[160px]' />
+      </div>
 
     </footer>
   )

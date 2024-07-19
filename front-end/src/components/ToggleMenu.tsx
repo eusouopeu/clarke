@@ -24,8 +24,17 @@ export default function ToggleMenu() {
         </ul></nav>
       </div>
       
-      <nav className='hidden lg:flex'>
-        <ul className='flex items-center gap-[24px]'>
+      <nav className='hidden lg:flex gap-[24px]'>
+        <ul className='flex items-center gap-[16px] text-black'>
+          <li>
+            <Link href={'./SobreNos'}> Sobre nós </Link>
+          </li>
+          <li>
+            <Link href={'./SobreNos'}> Sobre nós </Link>
+          </li>
+          <li>
+            <Link href={'./SobreNos'}> Sobre nós </Link>
+          </li>
           <li>
             <Link href={'./SobreNos'}> Sobre nós </Link>
           </li>

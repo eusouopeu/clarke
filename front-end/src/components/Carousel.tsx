@@ -7,11 +7,11 @@ import 'swiper/css'
 
 interface CarouselProps {
   className?: string
-  src: string
-  src1: string
-  src2: string
-  src3: string
-  children: React.ReactNode
+  src: any
+  src1?: any
+  src2?: any
+  src3?: any
+  children?: React.ReactNode
 }
 export default function Carousel({
   className,
@@ -26,14 +26,17 @@ export default function Carousel({
       spaceBetween={50}
       slidesPerView={1}
       navigation
-      autoplay={{ delay: 5000 }}
+      autoplay={{ delay: 3000 }}
       scrollbar={{ draggable: true }}
-      className={clsx( "w-full h-[400px] brightness-50 s-shadow", className )}
+      className={clsx( "w-full h-[500px] brightness-50 s-shadow", className )}
     >
-      <Image src={src} alt="Imagem 1" layout="fill" objectFit="cover" />
-      {src1 && (<Image src={src1} alt="Imagem 2" layout="fill" objectFit="cover" />)}
-      {src2 && (<Image src={src2} alt="Imagem 3" layout="fill" objectFit="cover" />)}
-      {src3 && (<Image src={src3} alt="Imagem 4" layout="fill" objectFit="cover" />)}
+      <SwiperSlide>
+        <Image src={src} alt="Imagem 1" layout="fill" objectFit="cover" />
+      </SwiperSlide>
+      <SwiperSlide><Image src={src1} alt="Imagem 2" layout="fill" objectFit="cover" /></SwiperSlide>
+      {src2 && (<SwiperSlide><Image src={src2} alt="Imagem 3" layout="fill" objectFit="cover" /></SwiperSlide>)}
+      {src3 && (<SwiperSlide><Image src={src3} alt="Imagem 4" layout="fill" objectFit="cover" /></SwiperSlide>)}
+      {children}
     </Swiper>
   )
 }

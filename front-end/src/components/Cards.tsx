@@ -14,7 +14,7 @@ export default function Cards({
 
   if (tile) {
     return (
-      <div className='flex flex-col w-full md:w-1/2 h-full md:h-1/2 gap-[16px] bg-gradient-to-r from-zinc-50 to-zinc-200 hover:from-zinc-200 hover:to-zinc-300'>
+      <div className='flex flex-col items-center justify-center w-full md:w-[50%] h-full py-[24px] px-[16px] gap-[16px] bg-gradient-to-r from-zinc-50 to-zinc-200 hover:from-emerald-100 hover:to-emerald-200 border-[1px] border-zinc-300'>
         {children}
       </div>
     )
