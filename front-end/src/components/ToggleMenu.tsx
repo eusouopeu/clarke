@@ -9,9 +9,9 @@ export default function ToggleMenu() {
   return (
     <div>
       <div className='lg:hidden'>
-        <Bars3BottomLeftIcon className='absolute right-[25px] w-[20px] h-[20px] fill-black' />
+        <Bars3BottomLeftIcon className='absolute right-[25px] top-[10px] w-[20px] h-[20px] fill-black' />
 
-        <nav className='flex lg:hidden flex-col items-center justify-center px-[48px]'><ul className='flex flex-col gap-[24px] text-white'>
+        <nav className='hidden flex-col items-center justify-center px-[48px]'><ul className='flex flex-col gap-[24px] text-white'>
           <li>
             <Link href={'./SobreNos'}> Sobre nós </Link>
           </li>

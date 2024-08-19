@@ -1,10 +1,5 @@
 /** @type {import('next').NextConfig} */
 
-const nextConfig = {
-  assetPrefix: './',
-  basePath: '/clarke',
-  trailingSlash: true,
-  reactStrictMode: true,
-};
+const nextConfig = {};
 
 export default nextConfig;

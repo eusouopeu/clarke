@@ -15,12 +15,15 @@ import app from '@/assets/App.png'
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center pt-[45px] justify-between" data-aos='ease-in-out'>
-      <Carousel src={img1} src1={img2} src2={img3} className="h-[450px] s-shadow" />
+      <Carousel src={img1} src1={img2} src2={img3} className="h-[900px] lg:h-[500px] s-shadow" />
 
       <Hero/>
 
       <section className="s-gap s-padding">
-        <h2 className="text-start">Dentre as mais de 1.000 empresas-clientes que utilizam o seu serviço estão:</h2>
+        <h2 className="text-start">Metodologias Ágeis</h2>
+
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio exercitationem nihil dolor eligendi repudiandae molestias dignissimos deserunt officia esse eum, consectetur temporibus quae? Omnis, voluptate odio? Et earum dolorem ea!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio exercitationem nihil dolor eligendi repudiandae molestias dignissimos deserunt officia esse eum, consectetur temporibus quae? Omnis, voluptate odio? Et earum dolorem ea!</p>
 
       </section>
 
